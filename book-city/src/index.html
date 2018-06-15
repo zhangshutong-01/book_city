@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/libs/flexible.js"></script>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <span class="icon-sign"></span>
+            <div class="tab">
+                <span class="tab-item active">书城</span>
+                <span class="tab-item">书架</span>
+                <div class="line"></div>
+            </div>
+            <span class="icon-my"></span>
+        </header>
+        <div class="content">
+            <div class="swiper-container wrap-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide book-city">
+                        <div up='上拉加载' down='下拉刷新'>
+                            <ul class="list">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li>11</li>
+                                <li>12</li>
+                                <li>13</li>
+                                <li>14</li>
+                                <li>15</li>
+                                <li>16</li>
+                                <li>17</li>
+                                <li>18</li>
+                                <li>19</li>
+                                <li>20</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        书架
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/libs/require.js"></script>
+<script>
+    require(['js/main'], function() {
+        require(['index'])
+    })
+</script>
+
+</html>

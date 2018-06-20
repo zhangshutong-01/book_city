@@ -22,36 +22,53 @@
             <span class="icon-my"></span>
         </header>
         <div class="content">
-            <div class="swiper-container wrap-swiper">
+            <div class="swiper-container wrap-swiper swiper-no-swiping">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide book-city">
                         <div up='上拉加载' down='下拉刷新'>
                             <ul class="list">
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                                <li>10</li>
-                                <li>11</li>
-                                <li>12</li>
-                                <li>13</li>
-                                <li>14</li>
-                                <li>15</li>
-                                <li>16</li>
-                                <li>17</li>
-                                <li>18</li>
-                                <li>19</li>
-                                <li>20</li>
+                                <section class="top">
+                                    <div class="search">
+                                        <div class="search-link">
+                                            <div class="not-ipt">请输入书名，作者，关键字</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-container swiper2 swiper-no-swiping">
+                                        <div class="swiper-wrapper wrapper2">
+                                            <script id="swiper" type="text/x-handlebars-template">
+                                                {{#each data}}
+                                                <div class="swiper-slide">
+                                                    <img src="{{ad_pic_url}}" alt="">
+                                                </div>
+                                                {{/each}}
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <ul class="top-home__btn">
+                                        <script id="list" type="text/x-handlebars-template">
+                                            {{#each data}}{{#unless size}}
+                                            <li>
+                                                <img src="{{ad_copy}}" alt="">
+                                                <p>{{ad_name}}</p>
+                                            </li>
+                                            {{/unless}}{{/each}}
+                                        </script>
+                                    </ul>
+                                </section>
+
                             </ul>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        书架
+                        <section class="top">
+                            <div class="search">
+                                <div class="search-link">
+                                    <div class="not-ipt">请输入书名，作者，关键字</div>
+                                    <div class="switch-btn"></div>
+                                </div>
+                            </div>
+
+                        </section>
                     </div>
                 </div>
             </div>

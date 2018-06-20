@@ -5,6 +5,8 @@ require.config({
         'index': 'app/index',
         'swiper': 'libs/swiper.min',
         'handlebars': 'libs/handlebars-v4.0.11',
-        'bscroll': 'libs/bscroll'
+        'bscroll': 'libs/bscroll',
+        'render': 'render/render',
+        'direction': 'common/direction'
     }
 });

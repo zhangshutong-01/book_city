@@ -1,5 +1,5 @@
-require(['jquery', 'bscroll', 'swiper'], function($, bscroll, swiper) {
-    var swiperList = new swiper('.swiper-container', {
+require(['jquery', 'bscroll', 'swiper', 'render', 'direction'], function($, bscroll, swiper, render, direction) {
+    var swiperList = new swiper('.wrap-swiper', {
         onslideChangeStart: function() {
             var activeIndex = swiper.activeIndex;
             $('.tab-item').eq(activeIndex).addClass('active').siblings().removeClass('active');
@@ -25,6 +25,7 @@ require(['jquery', 'bscroll', 'swiper'], function($, bscroll, swiper) {
         click: true,
         scrollY: true
     });
+    var pagenum = 1;
     var parent = $('.book-city>div')
     Bscroll.on("scroll", function() {
         if (this.y < this.maxScrollY - 40) {
@@ -45,11 +46,36 @@ require(['jquery', 'bscroll', 'swiper'], function($, bscroll, swiper) {
         if (parent.attr('up') === '释放加载更多') {
             if (pagenum < total) {
                 pagenum++;
-                gitList()
                 parent.attr('up', '上拉加载')
             }
         } else if (parent.attr('down') === '释放刷新') {
             location.reload()
         }
     });
+    $.ajax({
+        url: "/api/data",
+        dataType: "json",
+        success: function(res) {
+            render('#swiper', '.wrapper2', res.items[0].data);
+            new swiper('.swiper2', {
+                autoplay: 3000,
+                loop: true
+            })
+        },
+        error: function(error) {
+            console.warn(error)
+        }
+    });
+    $.ajax({
+        url: "/api/top-home",
+        dataType: "json",
+        success: function(res) {
+            console.log(res)
+            render('#list', '.top-home__btn', res.items[0].data);
+        },
+        error: function(error) {
+            console.warn(error)
+        }
+    });
+
 })

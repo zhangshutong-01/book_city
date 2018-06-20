@@ -5,7 +5,8 @@ var path = require('path');
 var url = require('url');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-//起服务
+var mock = require('./data')
+    //起服务
 gulp.task('server', ['scss'], function() {
     gulp.src('src')
         .pipe(server({
@@ -16,8 +17,8 @@ gulp.task('server', ['scss'], function() {
                 if (pathname === '/favicon.ico') {
                     return false
                 }
-                if (pathname === '/app/list') {
-                    // res.end(JSON.stringify(data))
+                if (/\/api/g.test(pathname)) {
+                    res.end(JSON.stringify(mock(pathname)))
                 } else {
                     pathname = pathname === '/' ? '/index.html' : pathname;
                     res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)))

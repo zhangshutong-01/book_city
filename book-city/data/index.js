@@ -3,7 +3,8 @@ var data = require('./mock/data.json');
 
 var obj = {
     "/api/data": homeJson,
-    "/api/top-home": data
+    "/api/top-home": data,
+
 }
 
 module.exports = function(path) {

@@ -1,4 +1,5 @@
-require(['jquery', 'bscroll', 'swiper', 'render', 'direction'], function($, bscroll, swiper, render, direction) {
+require(['jquery', 'bscroll', 'swiper', 'render', 'direction', 'text!bookTB'], function($, bscroll, swiper, render, direction, bookTB) {
+    $("body").append(bookTB);
     var swiperList = new swiper('.wrap-swiper', {
         onslideChangeStart: function() {
             var activeIndex = swiper.activeIndex;
@@ -57,6 +58,7 @@ require(['jquery', 'bscroll', 'swiper', 'render', 'direction'], function($, bscr
         dataType: "json",
         success: function(res) {
             render('#swiper', '.wrapper2', res.items[0].data);
+            render('#top-list', '.top-list', res.items[1].data)
             new swiper('.swiper2', {
                 autoplay: 3000,
                 loop: true

@@ -201,15 +201,14 @@ body {
 .wrap {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
-  background: #aaa; }
+          flex-direction: column; }
   .wrap header {
     width: 100%;
     height: 1.17333rem;
@@ -294,6 +293,9 @@ body {
 .none {
   display: none; }
 
+.wrap {
+  background: #ccc; }
+
 .wrap-swiper {
   width: 100%;
   height: 100%;
@@ -336,14 +338,18 @@ body {
         position: absolute;
         bottom: -1.17333rem;
         left: 0; }
-    .wrap-swiper .swiper-slide .top {
+    .wrap-swiper .swiper-slide .block {
       width: 100%;
-      height: auto;
-      background: #fff; }
-      .wrap-swiper .swiper-slide .top .search {
+      border-bottom: 0.26667rem solid #ddd; }
+      .wrap-swiper .swiper-slide .block .title-line {
+        line-height: 1.17333rem;
+        border-left: 0.10667rem solid #ff6600;
+        padding-left: 0.4rem;
+        border-bottom: 1px solid #ddd; }
+      .wrap-swiper .swiper-slide .block .search {
         width: 100%;
         height: auto; }
-        .wrap-swiper .swiper-slide .top .search .search-link {
+        .wrap-swiper .swiper-slide .block .search .search-link {
           width: 100%;
           height: 1.97333rem;
           padding: 0.4rem;
@@ -354,7 +360,7 @@ body {
           -ms-box-sizing: border-box;
           -o-box-sizing: border-box;
           box-sizing: border-box; }
-          .wrap-swiper .swiper-slide .top .search .search-link .not-ipt {
+          .wrap-swiper .swiper-slide .block .search .search-link .not-ipt {
             border: 1px solid #ddd;
             -webkit-box-flex: 1;
                 -ms-flex: 1;
@@ -364,14 +370,14 @@ body {
             background: url("../imgs/icon-search.png") no-repeat 0.4rem center;
             background-size: 0.48rem;
             padding-left: 1.28rem; }
-          .wrap-swiper .swiper-slide .top .search .search-link .switch-btn {
+          .wrap-swiper .swiper-slide .block .search .search-link .switch-btn {
             width: 1.17333rem;
             height: 1.17333rem;
             background: url("../imgs/icon-switch.png") no-repeat center center;
             background-size: 0.48rem;
             border: 1px solid #ddd;
             margin-left: 0.4rem; }
-      .wrap-swiper .swiper-slide .top .top-home__btn {
+      .wrap-swiper .swiper-slide .block .top-home__btn {
         width: 100%;
         height: 1.6rem;
         display: -webkit-box;
@@ -380,15 +386,37 @@ body {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; }
-        .wrap-swiper .swiper-slide .top .top-home__btn li {
+        .wrap-swiper .swiper-slide .block .top-home__btn li {
           -webkit-box-flex: 1;
               -ms-flex: 1;
                   flex: 1;
           width: 100%;
           text-align: center; }
-          .wrap-swiper .swiper-slide .top .top-home__btn li img {
+          .wrap-swiper .swiper-slide .block .top-home__btn li img {
             width: 40%;
             height: auto; }
+      .wrap-swiper .swiper-slide .block .top-list {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+        .wrap-swiper .swiper-slide .block .top-list li {
+          width: 33.3%; }
+          .wrap-swiper .swiper-slide .block .top-list li dl {
+            width: 2.34667rem;
+            margin: 0.26667rem auto; }
+            .wrap-swiper .swiper-slide .block .top-list li dl dt {
+              width: 100%;
+              height: 3.2rem;
+              overflow: hidden; }
+            .wrap-swiper .swiper-slide .block .top-list li dl dd {
+              width: 100%;
+              height: 0.8rem; }
+          .wrap-swiper .swiper-slide .block .top-list li img {
+            width: 100%;
+            height: 100%; }
     .wrap-swiper .swiper-slide .swiper2 {
       width: 100%;
       height: auto; }
